@@ -12,7 +12,7 @@ const RobotPage = () => {
   return (
     <div>
       <h1>Robots</h1>
-      {data && data.map((robot) => <p>{robot.name}</p>)}
+      {data && data.map((robot) => <p key={robot.id}>{robot.name}</p>)}
     </div>
   );
 };
