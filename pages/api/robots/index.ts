@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { SupabaseAdmin } from "../../../lib/supabase-admin";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const RobotsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
     const { data } = await SupabaseAdmin.from("robot").select(
       `id, 
@@ -22,3 +22,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     message: "Unsupported Request",
   });
 };
+
+export default RobotsApi;
