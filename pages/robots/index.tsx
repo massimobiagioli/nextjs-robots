@@ -1,10 +1,6 @@
 import useSWR from "swr";
+import fetcher from "../../lib/fetcher";
 import { Robot } from "../../types/robots";
-
-const fetcher = async (input: RequestInfo) => {
-  const res: Response = await fetch(input);
-  return await res.json();
-};
 
 const RobotPage = () => {
   const { data } = useSWR<Robot[]>(`/api/robots`, fetcher);
