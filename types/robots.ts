@@ -10,3 +10,11 @@ export type Robot = {
   name: string;
   created_at: Date;
 };
+
+export type RobotListComponentProps = {
+  robots: Robot[];
+};
+
+export type RobotDetailComponentProps = {
+  robot: Robot;
+};
